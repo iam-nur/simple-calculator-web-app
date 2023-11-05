@@ -1,21 +1,20 @@
-let currentInput = '';
+document.addEventListener("DOMContentLoaded", function () {
+  const display = document.getElementById("display");
+  const keys = document.querySelectorAll("button");
 
-function appendToDisplay(value) {
-    currentInput += value;
-    document.getElementById('display').value = currentInput;
-}
-
-function clearDisplay() {
-    currentInput = '';
-    document.getElementById('display').value = '';
-}
-
-function calculateResult() {
-    try {
-        const result = eval(currentInput);
-        document.getElementById('display').value = result;
-        currentInput = result.toString();
-    } catch (error) {
-        document.getElementById('display').value = 'Error';
-    }
-}
+  keys.forEach((key) => {
+    key.addEventListener("click", function () {
+      if (key.value === "=") {
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = "Error";
+        }
+      } else if (key.value === "C") {
+        display.value = "";
+      } else {
+        display.value += key.value;
+      }
+    });
+  });
+});
