@@ -3,32 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript Calculator</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Calculator</title>
   </head>
   <body>
-    <div class="calculator">
-      <input type="text" id="display" readonly />
-      <div class="keys">
-        <button class="operator" value="C">C</button>
-        <button class="operator" value="*">*</button>
-        <button class="operator" value="/">/</button>
-        <button value="9">9</button>
-        <button value="5">5</button>
-        <button value="6">6</button>
-        <button value="7">7</button>
-        <button value="8">8</button>
-        <button value="1">1</button>
-        <button value="2">2</button>
-        <button value="3">3</button>
-        <button value="4">4</button>
-        <button value="0">0</button>
-        <button value=".">.</button>
-        <button class="operator" value="+">+</button>
-        <button class="operator" value="-">-</button>
-        <button class="calculate" id="equals" value="=">=</button>
+    <main class="calculator">
+      <div class="top">
+        <span class="unit">deg</span>
+        <section class="screen">
+          <div class="input"></div>
+          <div class="result"></div>
+        </section>
       </div>
-    </div>
+
+      <div class="bottom">
+        <section class="keys">
+          <div class="column">
+            <span data-key="7">7</span>
+            <span data-key="4">4</span>
+            <span data-key="1">1</span>
+            <span data-key=".">.</span>
+          </div>
+
+          <div class="column">
+            <span data-key="8">8</span>
+            <span data-key="5">5</span>
+            <span data-key="2">2</span>
+            <span data-key="0">0</span>
+          </div>
+
+          <div class="column">
+            <span data-key="9">9</span>
+            <span data-key="6">6</span>
+            <span data-key="3">3</span>
+            <span class="equals-to" data-key="=">=</span>
+          </div>
+        </section>
+
+        <section class="operators">
+          <span class="delete">del</span>
+          <span data-key="÷">÷</span>
+          <span data-key="x">x</span>
+          <span data-key="-">-</span>
+          <span data-key="+">+</span>
+        </section>
+      </div>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
